@@ -1,9 +1,9 @@
 import java.util.Stack;
 
-public class prefixToPostfix {
-    static String prefixToPostfixConversion(String s){
+public class postfixToInfix {
+    static String postfixToInfixMethod(String s){
         Stack<String> st = new Stack<>();
-        for (int i = s.length() - 1; i >= 0; i--) {
+        for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             if ((ch >= 'a' && ch <= 'z')
                     || (ch >= 'A' && ch <= 'Z')
@@ -11,14 +11,14 @@ public class prefixToPostfix {
                 st.push("" + ch);
             }
             else {
-                String v1 = st.pop();
                 String v2 = st.pop();
-                st.push(v1 + v2 + ch);
+                String v1 = st.pop();
+                st.push("(" + v1 + ch + v2 + ")");
             }
         }
         return st.peek();
     }
     public static void main(String[] args) {
-        System.out.println(prefixToPostfixConversion("+-a^bcd"));
+        System.out.println(postfixToInfixMethod("abc^-d+"));
     }
 }

@@ -26,7 +26,7 @@ public class infixToPostfixSmart {
                 }
                 op.pop();
             }
-            else if (op.isEmpty() || ch == '(' || op.peek() == '(') {
+            else if (op.isEmpty() || ch == '(') {
                 op.push(ch);
             }
 

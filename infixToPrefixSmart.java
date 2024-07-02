@@ -23,7 +23,7 @@ public class infixToPrefixSmart {
                     st.push( op.pop() + v1 + v2);
                 }
                 op.pop();
-            } else if (op.isEmpty() || ch == '(' || op.peek() == '(') {
+            } else if (op.isEmpty() || ch == '(') {
                 op.push(ch);
             } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^') {
                 while (!op.isEmpty() && (precedenceOf(op.peek()) >= precedenceOf(ch))) {

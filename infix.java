@@ -1,7 +1,6 @@
 import java.util.Stack;
 
 public class infix {
-
    static int infixEvaluation(String s){
         Stack<Integer> operand = new Stack<>();
         Stack<Character> operator = new Stack<>();
